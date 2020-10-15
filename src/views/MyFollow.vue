@@ -44,11 +44,18 @@ export default {
     },
     //取消关注
     async unfollow(id) {
-      const res = await this.$axios.get(`/user_unfollow/${id}`);
-      // console.log(res);
-      if (res.data.statusCode === 200) {
-        this.getList();
-        this.$toast.success(res.data.message);
+      try {
+        await this.$dialog.confirm({
+          title: "温馨提示",
+          message: "确定取消关注吗？",
+        });
+        const res = await this.$axios.get(`/user_unfollow/${id}`);
+        if (res.data.statusCode === 200) {
+          this.getList();
+          this.$toast.success(res.data.message);
+        }
+      } catch {
+        console.log("不取消了");
       }
     },
   },

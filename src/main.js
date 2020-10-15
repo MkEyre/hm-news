@@ -10,6 +10,8 @@ import './styles/iconfont.css'
 import HmHeader from './components/HmHeader.vue'
 import HmLogo from './components/HmLogo.vue'
 import HmButton from './components/HmButton.vue'
+import HmPost from './components/HmPost.vue'
+
 import {
   Field,
   Toast,
@@ -33,6 +35,8 @@ Vue.use(List)
 Vue.component('hm-header', HmHeader)
 Vue.component('hm-logo', HmLogo)
 Vue.component('hm-button', HmButton)
+Vue.component('hm-post', HmPost)
+
 //注册全局过滤器
 Vue.filter('time', (val, format) => {
   return moment(val).format(format)
