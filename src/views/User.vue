@@ -20,7 +20,12 @@
         @click="$router.push('/my-follow')"
         value="关注的用户"
       />
-      <van-cell title="我的跟贴" is-link value="跟帖回复" />
+      <van-cell
+        title="我的跟贴"
+        is-link
+        @click="$router.push('/my-comment')"
+        value="跟帖回复"
+      />
       <van-cell title="我的收藏" is-link value="文档/视频" />
       <van-cell title="设置" is-link @click="$router.push('/edit')" />
       <van-cell title="退出" is-link @click="logout" />

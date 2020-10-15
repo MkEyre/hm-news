@@ -19,6 +19,7 @@ import {
   RadioGroup,
   Radio,
   Uploader,
+  List,
 } from 'vant'
 Vue.use(Field, Toast)
 Vue.use(Cell)
@@ -27,6 +28,8 @@ Vue.use(Dialog)
 Vue.use(RadioGroup)
 Vue.use(Radio)
 Vue.use(Uploader)
+Vue.use(List)
+
 Vue.component('hm-header', HmHeader)
 Vue.component('hm-logo', HmLogo)
 Vue.component('hm-button', HmButton)
