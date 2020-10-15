@@ -5,6 +5,7 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import User from '../views/User.vue'
 import Edit from '../views/Edit.vue'
+import MyFollow from '../views/MyFollow.vue'
 
 const router = new VueRouter({
   routes: [
@@ -13,6 +14,7 @@ const router = new VueRouter({
     { path: '/register', name: '/register', component: Register },
     { path: '/user', name: '/user', component: User },
     { path: '/edit', name: '/edit', component: Edit },
+    { path: '/my-follow', name: '/my-follow', component: MyFollow },
   ],
 })
 router.beforeEach((to, from, next) => {
