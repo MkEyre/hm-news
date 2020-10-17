@@ -11,7 +11,11 @@
       </div>
       <div class="user">
         <span>{{ post.user.nickname }}</span>
-        <span class="count">{{ post.comments.length }}跟帖</span>
+        <span class="count"
+          >{{
+            post.comments ? post.comments.length : post.comment_length
+          }}跟帖</span
+        >
       </div>
     </div>
     <!-- 单张图片 -->
@@ -20,7 +24,11 @@
         <div class="title">{{ post.title }}</div>
         <div class="user">
           <span>{{ post.user.nickname }}</span>
-          <span class="count">{{ post.comments.length }}跟帖</span>
+          <span class="count"
+            >{{
+              post.comments ? post.comments.length : post.comment_length
+            }}跟帖</span
+          >
         </div>
       </div>
       <div class="img">
@@ -38,7 +46,11 @@
       </div>
       <div class="user">
         <span>{{ post.user.nickname }}</span>
-        <span class="count">{{ post.comments.length }}跟帖</span>
+        <span class="count"
+          >{{
+            post.comments ? post.comments.length : post.comment_length
+          }}跟帖</span
+        >
       </div>
     </div>
   </div>
