@@ -25,6 +25,7 @@ import {
   Tab,
   Tabs,
   PullRefresh,
+  Sticky,
 } from 'vant'
 Vue.use(Field, Toast)
 Vue.use(Cell)
@@ -37,6 +38,7 @@ Vue.use(List)
 Vue.use(Tab)
 Vue.use(Tabs)
 Vue.use(PullRefresh)
+Vue.use(Sticky)
 
 Vue.component('hm-header', HmHeader)
 Vue.component('hm-logo', HmLogo)

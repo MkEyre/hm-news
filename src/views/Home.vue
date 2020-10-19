@@ -5,8 +5,16 @@
       <div class="center">
         <i class="iconfont iconsearch"></i> <span>搜索新闻</span>
       </div>
-      <div class="right"><i class="iconfont iconwode"></i></div>
+      <div class="right" @click="hasLogin">
+        <i class="iconfont iconwode"></i>
+      </div>
     </div>
+    <!-- 小三角部分 -->
+    <van-sticky z-index="999">
+      <div class="container" @click="editTab">
+        <i class="iconfont iconjiantou1"></i>
+      </div>
+    </van-sticky>
     <!-- tab栏部分 -->
     <van-tabs v-model="active" sticky>
       <!-- tab栏列表 -->
@@ -26,6 +34,7 @@
               v-for="(post, index) in postList"
               :key="index"
               :post="post"
+              @click.native="$router.push(`/detail/${post.id}`)"
             ></hm-post>
           </van-list>
         </van-pull-refresh>
@@ -81,7 +90,7 @@ export default {
     },
     //触底触发的函数
     onload() {
-      console.log("触底了呀");
+      // console.log("触底了呀");
       this.pageIndex++;
 
       this.getPostList(this.tabsList[this.active].id);
@@ -94,6 +103,19 @@ export default {
       this.finished = false;
       this.loading = true;
       this.getPostList(this.tabsList[this.active].id);
+    },
+    // 编辑导航栏项
+    editTab() {
+      console.log(111);
+    },
+    // 是否已登录
+    hasLogin() {
+      const token = localStorage.getItem("token");
+      if (token) {
+        this.$router.push("/user");
+      } else {
+        this.$router.push("/login");
+      }
     },
   },
 
@@ -114,6 +136,18 @@ export default {
 <style lang="less" scoped>
 /deep/ .van-tabs__nav {
   background-color: #eee;
+  margin-right: 40px;
+}
+//小三角样式
+.container {
+  width: 40px;
+  height: 44px;
+  position: absolute;
+  right: 0;
+  background-color: #eee;
+  text-align: center;
+  line-height: 44px;
+  z-index: 999;
 }
 .header {
   display: flex;
