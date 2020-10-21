@@ -11,7 +11,7 @@
     </div>
     <!-- 小三角部分 -->
     <van-sticky z-index="999">
-      <div class="container" @click="editTab">
+      <div class="container" @click="$router.push('/tabsListEdit')">
         <i class="iconfont iconjiantou1"></i>
       </div>
     </van-sticky>
@@ -45,6 +45,7 @@
 i
 <script>
 export default {
+  name: "home",
   data() {
     return {
       active: 0,
@@ -103,10 +104,6 @@ export default {
       this.finished = false;
       this.loading = true;
       this.getPostList(this.tabsList[this.active].id);
-    },
-    // 编辑导航栏项
-    editTab() {
-      console.log(111);
     },
     // 是否已登录
     hasLogin() {
